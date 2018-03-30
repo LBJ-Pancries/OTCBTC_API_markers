@@ -1,0 +1,19 @@
+<table class="table">
+  <tr>
+    <th>OTCBTC ID</th>
+    <th>Ticker ID</th>
+    <th>Name</th>
+    <th>Buy</th>
+  </tr>
+  <% @markets.each do |market| %>
+    <tr>
+      <td><%= market.otcbtc_id %></td>
+      <td><%= market.ticker_id %></td>
+      <td><%= market.name %></td>
+      <td>
+        <%= market.current_buy %>
+        <%= link_to "更新现价", update_buy_market_path(market), :method => :post %>
+      </td>
+    </tr>
+  <% end %>
+</table>
